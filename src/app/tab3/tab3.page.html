@@ -1,9 +1,29 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Three
+      Register new hero
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+
+  <ion-card>
+    <ion-item>
+      <img [src]="photo ? photo : 'https://codyhouse.co/demo/squeezebox-portfolio-template/img/img.png'">
+      <ion-fab vertical="bottom" horizontal="end">
+        <ion-fab-button (click)="takePicture()">
+          <ion-icon name="camera"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-item>
+    <ion-card-header>
+      <ion-card-title>
+        <ion-input placeholder="Type your hero name"></ion-input>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+    </ion-card-content>
+    <ion-button expand="block">Save</ion-button>
+  </ion-card>
+</ion-content>
