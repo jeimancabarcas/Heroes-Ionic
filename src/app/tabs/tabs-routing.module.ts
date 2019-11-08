@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import {HeroDetailComponent} from '../Components/hero-detail/hero-detail.component';
 
 const routes: Routes = [
+
+  { path: 'hero-detail/:id', component: HeroDetailComponent},
   {
     path: 'tabs',
     component: TabsPage,

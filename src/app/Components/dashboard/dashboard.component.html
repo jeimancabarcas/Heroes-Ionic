@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="ion-text-center">
+          <h1>Top Heroes</h1>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col *ngFor="let hero of heroes" routerLink="/hero-detail/{{hero.id}}" size="6">
+        <ion-card>
+          <img src="https://codyhouse.co/demo/squeezebox-portfolio-template/img/img.png" alt="">
+          <ion-card-header>
+            <ion-card-title>
+              {{hero.name | uppercase}}
+            </ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

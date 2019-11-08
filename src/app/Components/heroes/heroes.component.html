@@ -1,0 +1,15 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Heroes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let hero of heroes" routerLink="/hero-detail/{{hero.id}}">
+      <ion-label><span class="badge">{{hero.id}}</span> {{hero.name}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+

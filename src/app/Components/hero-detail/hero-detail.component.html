@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Hero Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="hero">
+    <img src="https://codyhouse.co/demo/squeezebox-portfolio-template/img/img.png" alt="">
+    <ion-card-header>
+      <ion-card-title>{{hero.name | uppercase}} details!</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label color="primary">Id: {{hero.id}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary">Name: {{hero.name}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
