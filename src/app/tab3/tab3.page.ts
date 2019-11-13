@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Plugins, CameraResultType, CameraSource } from '@capacitor/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { AlertController } from '@ionic/angular';
 
 
 @Component({
@@ -11,7 +12,8 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export class Tab3Page {
   photo: SafeResourceUrl;
 
-  constructor(private sanitizer: DomSanitizer) {  }
+  constructor(private sanitizer: DomSanitizer,
+              private alertController: AlertController) {  }
   async takePicture() {
     const image = await Plugins.Camera.getPhoto({
       quality: 100,
@@ -22,4 +24,20 @@ export class Tab3Page {
 
     this.photo = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.dataUrl));
   }
+  save(): void {
+    this.presentAlert();
+  }
+
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: '',
+      subHeader: '',
+      message: 'Saved.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
 }
